@@ -1,0 +1,121 @@
+[
+    {
+        "id": "b329517f0f6380b3",
+        "type": "tab",
+        "label": "KY-024 Sensor de Campo Magnetico",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dc4e3024aecaeca9",
+        "type": "mqtt in",
+        "z": "b329517f0f6380b3",
+        "name": "",
+        "topic": "utng/SensorCampoMagnetico",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a4bf609009dc6641",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 160,
+        "wires": [
+            [
+                "eba60ca37e812f56"
+            ]
+        ]
+    },
+    {
+        "id": "eba60ca37e812f56",
+        "type": "postgresql",
+        "z": "b329517f0f6380b3",
+        "name": "INSERT sensors",
+        "query": "INSERT INTO sensor_details (sensor_id, user_id, value) VALUES (25,1,'{{{msg.payload}}}');\n",
+        "postgreSQLConfig": "3cd515a78cadaa56",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 670,
+        "y": 220,
+        "wires": [
+            [
+                "59f3b50382433d22"
+            ]
+        ]
+    },
+    {
+        "id": "59f3b50382433d22",
+        "type": "debug",
+        "z": "b329517f0f6380b3",
+        "name": "debug 37",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a4bf609009dc6641",
+        "type": "mqtt-broker",
+        "name": "Server",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3cd515a78cadaa56",
+        "type": "postgreSQLConfig",
+        "name": "aiot",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "aiot",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "utng",
+        "userFieldType": "str",
+        "password": "1234",
+        "passwordFieldType": "str"
+    }
+]
