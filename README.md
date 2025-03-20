@@ -270,19 +270,6 @@
 
 ![Diagrama sensor KY-026](assets/sensores-diagrama/KY-026.png)
 
-#### KY-027 Módulo Luminoso de Inclinación
-
-**Video**
-
-[KY-027-Modulo Luminoso de Inclinacion](https://drive.google.com/file/d/1KQHyc6oAALyhKOWl6g5aHXxxRhBiR_qz/view?usp=drive_link)
-
-**Código en el Repositorio**
-
-- [KY-027 ModuloLuminosoInclinacion.py](codigoSensores/KY-027%20ModuloLuminosoInclinacion.py)
-
-**Diagrama**
-
-![Diagrama sensor KY-027](assets/sensores-diagrama/KY-027.png)
 
 #### KY-028 Sensor Temperatura Digital
 
@@ -544,7 +531,7 @@
 
 **Código en el Repositorio**
 
-- [Relevador.py](codigoSensores/Sensor%20del%20nivel%20de%20agua.py)
+- [Sensor Agua](codigoSensores/Sensor%20del%20nivel%20de%20agua.py)
 
 **Diagrama**
 
